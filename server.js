@@ -31,6 +31,6 @@ io.on("connection",function(socket){
         else if(num.GetNum > RandomNum)
         {
             socket.emit('get',"Most");
-        }*/
+        }*///
     });
 });
