@@ -10,4 +10,11 @@ io.on("connection",function(socket){
     console.log("client connect");
 
     socket.emit('open');
+
+    socket.on("GetNum",function(num){
+        
+        socket.emit('get');
+    
+    
+    });
 });
