@@ -12,7 +12,7 @@ console.log(RandomNum);
 io.on("connection",function(socket){
 
     console.log("client connect");
-    socket.emit('open');
+    socket.emit("open");
 
     socket.on("Check",function(data){
         
@@ -39,7 +39,7 @@ io.on("connection",function(socket){
             //console.log("Most");
         }
         
-        socket.emit('getValue',100);
+        socket.emit("getValue",playerNum);
         
     });
 });
