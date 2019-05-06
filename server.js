@@ -39,6 +39,6 @@ io.on("connection",function(socket){
             console.log("Most");
         }
 
-        //socket.emit('get',data);
+        socket.emit('get',data);
     });
 });
