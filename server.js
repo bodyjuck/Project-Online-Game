@@ -1,7 +1,7 @@
 var port = process.env.PORT || 3000;
 var io = require('socket.io')(port);
 
-//var playerNum;
+var playerNum;
 
 var RandomNum = Math.floor(Math.random() * 100);
 
@@ -16,7 +16,7 @@ io.on("connection",function(socket){
 
     socket.on("Check",function(data){
         
-        //playerNum = data.mynum;
+        playerNum = data.mynum;
 
         //console.log(playerNum);
 
@@ -39,6 +39,6 @@ io.on("connection",function(socket){
             //console.log("Most");
         }
 
-        socket.emit('getValue',data.mynum);
+        socket.emit('getValue',playerNum);
     });
 });
