@@ -1,7 +1,6 @@
 var port = process.env.PORT || 3000;
 var io = require('socket.io')(port);
 
-var playerNum;
 
 var RandomNum = Math.floor(Math.random() * 100);
 
@@ -16,7 +15,7 @@ io.on("connection",function(socket){
 
     socket.on("Check",function(data){
         
-        playerNum = data.mynum;
+        
 
         //console.log(playerNum);
         
@@ -25,21 +24,18 @@ io.on("connection",function(socket){
         
         if(data.mynum == RandomNum)
         {
-            //socket.emit('get',"Win");
-            //console.log("Win");
+            var result = {text:"Win"}
         }
         else if(data.mynum < RandomNum)
         {
-            //socket.emit('get',"Less");
-            //console.log("Less");
+            var result = {text:"Less"}
         }
         else if(data.mynum > RandomNum)
         {
-            //socket.emit('get',"Most");
-            //console.log("Most");
+            var result = {text:"Most"}
         }
         
-        socket.emit("getValue",playerNum);
+        socket.emit("getValue",result);
         
     });
 });
