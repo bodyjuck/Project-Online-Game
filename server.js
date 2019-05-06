@@ -39,6 +39,7 @@ io.on("connection",function(socket){
             //console.log("Most");
         }
 
-        socket.emit('getValue',playerNum);
+        socket.emit('getValue',"Win");
+        
     });
 });
