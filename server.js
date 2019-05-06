@@ -19,7 +19,7 @@ io.on("connection",function(socket){
         playerNum = data.mynum;
 
         //console.log(playerNum);
-
+        
         //data = data.mynum;
         //delete data.mynum;
         
@@ -39,7 +39,7 @@ io.on("connection",function(socket){
             //console.log("Most");
         }
         
-        socket.emit('getValue',playerNum);
+        socket.emit('getValue',100);
         
     });
 });
