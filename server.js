@@ -26,19 +26,19 @@ io.on("connection",function(socket){
         if(data.mynum == RandomNum)
         {
             //socket.emit('get',"Win");
-            console.log("Win");
+            //console.log("Win");
         }
         else if(data.mynum < RandomNum)
         {
             //socket.emit('get',"Less");
-            console.log("Less");
+            //console.log("Less");
         }
         else if(data.mynum > RandomNum)
         {
             //socket.emit('get',"Most");
-            console.log("Most");
+            //console.log("Most");
         }
 
-        socket.emit('getValue');
+        socket.emit('getValue',data.mynum);
     });
 });
