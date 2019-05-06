@@ -18,19 +18,22 @@ io.on("connection",function(socket){
         
         playerNum = data.mynum;
 
-        console.log(playerNum);
-        /*
-        if(num.GetNum == RandomNum)
+        //console.log(playerNum);
+        
+        if(playerNum == RandomNum)
         {
-            socket.emit('get',"Win");
+            //socket.emit('get',"Win");
+            console.log("Win");
         }
-        else if(num.GetNum < RandomNum)
+        else if(playerNum < RandomNum)
         {
-            socket.emit('get',"Less");
+            //socket.emit('get',"Less");
+            console.log("Less");
         }
-        else if(num.GetNum > RandomNum)
+        else if(playerNum > RandomNum)
         {
-            socket.emit('get',"Most");
-        }*///
+            //socket.emit('get',"Most");
+            console.log("Most");
+        }
     });
 });
