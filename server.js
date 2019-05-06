@@ -24,16 +24,15 @@ io.on("connection",function(socket){
         
         if(data.mynum == RandomNum)
         {
-            //var result = {text:"Win"}
-            var result = {Win}
+            var result = {text:"Win"}
         }
         else if(data.mynum < RandomNum)
         {
-            var result = {Less}
+            var result = {text:"Less"}
         }
         else if(data.mynum > RandomNum)
         {
-            var result = {Less}
+            var result = {text:"Most"}
         }
         
         socket.emit("getValue",result);
