@@ -21,24 +21,24 @@ io.on("connection",function(socket){
         //console.log(playerNum);
 
         data = data.mynum;
-        delete data.mynum;
+        //delete data.mynum;
         
         if(data == RandomNum)
         {
             //socket.emit('get',"Win");
-            //console.log("Win");
+            console.log("Win");
         }
         else if(data < RandomNum)
         {
             //socket.emit('get',"Less");
-            //console.log("Less");
+            console.log("Less");
         }
         else if(data > RandomNum)
         {
             //socket.emit('get',"Most");
-            //console.log("Most");
+            console.log("Most");
         }
 
-        socket.emit('get',data);
+        //socket.emit('get',data);
     });
 });
