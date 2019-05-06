@@ -3,6 +3,8 @@ var io = require('socket.io')(port);
 
 var player = [];
 
+var RandomNum = Math.floor(Math.random() * 100);
+
 console.log("server started on port " + port);
 
 io.on("connection",function(socket){
@@ -13,8 +15,17 @@ io.on("connection",function(socket){
 
     socket.on("GetNum",function(num){
         
-        socket.emit('get');
-    
-    
+        if(GetNum.num == RandomNum)
+        {
+            socket.emit('get',"Win");
+        }
+        else if(GetNum.num < RandomNum)
+        {
+            socket.emit('get',"Less");
+        }
+        else if(GetNum.num > RandomNum)
+        {
+            socket.emit('get',"Most");
+        }
     });
 });
