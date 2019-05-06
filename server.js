@@ -20,17 +20,17 @@ io.on("connection",function(socket){
 
         //console.log(playerNum);
         
-        if(playerNum == RandomNum)
+        if(data.mynum == RandomNum)
         {
             //socket.emit('get',"Win");
             console.log("Win");
         }
-        else if(playerNum < RandomNum)
+        else if(data.mynum < RandomNum)
         {
             //socket.emit('get',"Less");
             console.log("Less");
         }
-        else if(playerNum > RandomNum)
+        else if(data.mynum > RandomNum)
         {
             //socket.emit('get',"Most");
             console.log("Most");
