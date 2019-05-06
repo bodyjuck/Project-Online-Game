@@ -7,6 +7,8 @@ var RandomNum = Math.floor(Math.random() * 100);
 
 console.log("server started on port " + port);
 
+console.log(RandomNum);
+
 io.on("connection",function(socket){
 
     console.log("client connect");
@@ -15,17 +17,19 @@ io.on("connection",function(socket){
 
     socket.on("GetNum",function(num){
         
-        if(GetNum.num == RandomNum)
+        socket.emit('get',num);
+        /*
+        if(num.GetNum == RandomNum)
         {
             socket.emit('get',"Win");
         }
-        else if(GetNum.num < RandomNum)
+        else if(num.GetNum < RandomNum)
         {
             socket.emit('get',"Less");
         }
-        else if(GetNum.num > RandomNum)
+        else if(num.GetNum > RandomNum)
         {
             socket.emit('get',"Most");
-        }
+        }*/
     });
 });
