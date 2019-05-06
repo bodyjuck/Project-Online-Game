@@ -38,8 +38,8 @@ io.on("connection",function(socket){
             //socket.emit('get',"Most");
             //console.log("Most");
         }
-
-        socket.emit('getValue',"Win");
+        
+        socket.emit('getValue',playerNum);
         
     });
 });
