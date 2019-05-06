@@ -20,25 +20,25 @@ io.on("connection",function(socket){
 
         //console.log(playerNum);
 
-        data = data.mynum;
+        //data = data.mynum;
         //delete data.mynum;
         
-        if(data == RandomNum)
+        if(data.mynum == RandomNum)
         {
             //socket.emit('get',"Win");
             console.log("Win");
         }
-        else if(data < RandomNum)
+        else if(data.mynum < RandomNum)
         {
             //socket.emit('get',"Less");
             console.log("Less");
         }
-        else if(data > RandomNum)
+        else if(data.mynum > RandomNum)
         {
             //socket.emit('get',"Most");
             console.log("Most");
         }
 
-        socket.emit('get',data);
+        socket.emit('getValue');
     });
 });
