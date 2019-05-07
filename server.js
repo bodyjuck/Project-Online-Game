@@ -34,6 +34,8 @@ io.on("connection",function(socket){
         {
             var result = {text:"Most"}
         }
+
+        console.log(result);
         
         socket.emit("getValue",result);
         
